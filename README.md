@@ -62,7 +62,7 @@ On a narrow column the controls drop to their own row per room — no separate Y
 This is not yet in the HACS default store, so add it as a custom repository:
 
 1. HACS → **Frontend** → ⋮ → **Custom repositories**
-2. Repository: `https://github.com/ilirdokle43/clean-heating-card`
+2. Repository: `https://github.com/ilirdokle43/HA-clean-heating-card`
 3. Category: **Lovelace**
 4. **Add**, then install **Clean Heating Card**
 5. Hard-refresh your browser (`Ctrl` + `Shift` + `R`)
@@ -81,15 +81,15 @@ This is not yet in the HACS default store, so add it as a custom repository:
 
 ```yaml
 type: custom:clean-heating-card
-room_name: Jora
+room_name: Living Room
 gas_entity: sensor.gas_cylinder_percent
-heating_entity: input_boolean.heating_jora
-room_temp_entity: sensor.jora_temperature
-target_temp_entity: input_number.jora_target
+heating_entity: input_boolean.heating_living_room
+room_temp_entity: sensor.living_room_temperature
+target_temp_entity: input_number.living_room_target
 boiler_entity: light.boiler
-automation_entity: automation.jora_thermostat
-script_entity: script.jora_toggle
-temp_override_entity: input_boolean.jora_temp_mode
+automation_entity: automation.living_room_thermostat
+script_entity: script.living_room_toggle
+temp_override_entity: input_boolean.living_room_temp_mode
 ```
 
 ### Several rooms
@@ -103,22 +103,22 @@ temperature_step: 0.5
 gas_warning: 25
 gas_critical: 15
 rooms:
-  - room_name: Jora
-    heating_entity: input_boolean.heating_jora
-    room_temp_entity: sensor.jora_temperature
-    target_temp_entity: input_number.jora_target
+  - room_name: Living Room
+    heating_entity: input_boolean.heating_living_room
+    room_temp_entity: sensor.living_room_temperature
+    target_temp_entity: input_number.living_room_target
     boiler_entity: light.boiler
-    automation_entity: automation.jora_thermostat
-    script_entity: script.jora_toggle
-    temp_override_entity: input_boolean.jora_temp_mode
-  - room_name: Nio
-    heating_entity: input_boolean.heating_nio
-    room_temp_entity: sensor.nio_temperature
-    target_temp_entity: input_number.nio_target
+    automation_entity: automation.living_room_thermostat
+    script_entity: script.living_room_toggle
+    temp_override_entity: input_boolean.living_room_temp_mode
+  - room_name: Bedroom
+    heating_entity: input_boolean.heating_bedroom
+    room_temp_entity: sensor.bedroom_temperature
+    target_temp_entity: input_number.bedroom_target
     boiler_entity: light.boiler
-    automation_entity: automation.nio_thermostat
-    script_entity: script.nio_toggle
-    temp_override_entity: input_boolean.nio_temp_mode
+    automation_entity: automation.bedroom_thermostat
+    script_entity: script.bedroom_toggle
+    temp_override_entity: input_boolean.bedroom_temp_mode
 ```
 
 ### Options
@@ -199,6 +199,6 @@ MIT — see [LICENSE](LICENSE).
 
 [hacs-badge]: https://img.shields.io/badge/HACS-Custom-41BDF5.svg
 [hacs-url]: https://github.com/hacs/integration
-[release-badge]: https://img.shields.io/github/v/release/ilirdokle43/clean-heating-card
-[release-url]: https://github.com/ilirdokle43/clean-heating-card/releases
-[license-badge]: https://img.shields.io/github/license/ilirdokle43/clean-heating-card
+[release-badge]: https://img.shields.io/github/v/release/ilirdokle43/HA-clean-heating-card
+[release-url]: https://github.com/ilirdokle43/HA-clean-heating-card/releases
+[license-badge]: https://img.shields.io/github/license/ilirdokle43/HA-clean-heating-card

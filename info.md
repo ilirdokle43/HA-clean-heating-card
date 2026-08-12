@@ -14,4 +14,4 @@ icons and theme variables, so it follows your theme in light and dark mode.
 - Visual editor for adding, reordering and editing rooms
 - Responsive, keyboard accessible, honours `prefers-reduced-motion`
 
-See the [README](https://github.com/ilirdokle43/clean-heating-card) for full configuration.
+See the [README](https://github.com/ilirdokle43/HA-clean-heating-card) for full configuration.
