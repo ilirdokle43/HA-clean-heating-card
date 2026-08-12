@@ -28,7 +28,7 @@
  */
 
 const CARD_TYPE = "clean-heating-card";
-const CARD_VERSION = "1.1.3";
+const CARD_VERSION = "1.2.0";
 
 /* ------------------------------------------------------------------ config */
 
@@ -37,6 +37,7 @@ const DEFAULTS = Object.freeze({
   gas_warning: 25,
   gas_critical: 15,
   show_name: true,
+  gas_label: "Gas",
 });
 
 /** Per-room options. These may sit at the top level (single room) or in `rooms[]`. */
@@ -57,6 +58,7 @@ const ROOM_ENTITY_KEYS = ROOM_KEYS.filter((k) => k !== "room_name");
 /** Options that apply to the whole card. */
 const GLOBAL_KEYS = [
   "gas_entity",
+  "gas_label",
   "gas_warning",
   "gas_critical",
   "temperature_step",
@@ -531,7 +533,7 @@ class CleanHeatingCard extends HTMLElement {
     gas.setAttribute("aria-label", "Gas cylinder level");
 
     const head = el("div", "head");
-    head.append(icon("mdi:gas-cylinder"), el("span", null, "Gazi"));
+    head.append(icon("mdi:gas-cylinder"), el("span", null, this._cfg.gas_label));
 
     const value = el("div", "big");
     const num = el("span", null, "—");
@@ -1225,6 +1227,7 @@ class CleanHeatingCard extends HTMLElement {
 
 const GLOBAL_SCHEMA = [
   { name: "gas_entity", selector: { entity: { domain: ["sensor"] } } },
+  { name: "gas_label", selector: { text: {} } },
   {
     name: "",
     type: "grid",
@@ -1250,6 +1253,7 @@ const ROOM_SCHEMA = [
 
 const LABELS = {
   gas_entity: "Gas cylinder sensor",
+  gas_label: "Gas panel label",
   temperature_step: "Step (°)",
   gas_warning: "Low gas (%)",
   gas_critical: "Critical gas (%)",

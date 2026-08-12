@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0
+
+- New `gas_label` option, defaulting to `Gas`. The gas panel label was previously hardcoded,
+  so it could not be translated. Set `gas_label` to keep a different word.
+- README screenshots.
+
 ## 1.1.3
 
 - Increase the optical offset of the flame glyph to `-3px` and expose it as

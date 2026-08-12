@@ -10,6 +10,8 @@ one room or several, stacked vertically and each independently controlled.
 Built for radiator setups where a shared central boiler serves rooms that each have their own
 heating flag, target temperature and automation.
 
+![Several rooms, dark theme](docs/multi-dark.png)
+
 ## Why
 
 Most heating dashboards either bury each room in its own card or lean on `custom:button-card`
@@ -29,6 +31,29 @@ it inherits your theme in both light and dark mode.
 - **Visual editor** — add, reorder, edit and remove rooms without touching YAML.
 - Responsive down to very narrow columns via container queries; touch-friendly targets;
   keyboard accessible; respects `prefers-reduced-motion`.
+
+## Screenshots
+
+A single room — compact, roughly 150px tall:
+
+![Single room, dark theme](docs/single-dark.png)
+
+The same card in a light theme:
+
+![Single room, light theme](docs/single-light.png)
+
+Several rooms share one gas panel, and each row shows its own state. Here the living room is
+firing, the bedroom is idle and the kitchen is in temperature mode:
+
+![Several rooms, light theme](docs/multi-light.png)
+
+Low gas turns amber below `gas_warning` and red below `gas_critical`:
+
+![Low gas warning](docs/gas-low.png)
+
+On a narrow column the controls drop to their own row per room — no separate YAML needed:
+
+<img src="docs/mobile.png" alt="Narrow column layout" width="330">
 
 ## Installation
 
@@ -103,6 +128,7 @@ Card-level:
 | Option             | Type   | Default   | Description                                             |
 | ------------------ | ------ | --------- | ------------------------------------------------------- |
 | `gas_entity`       | string | —         | Gas cylinder percentage sensor. Omit to hide the panel. |
+| `gas_label`        | string | `Gas`     | Label shown on the gas panel. Set it to your own language. |
 | `gas_warning`      | number | `25`      | At or below this %, the gas readout turns amber.        |
 | `gas_critical`     | number | `15`      | At or below this %, it turns red.                       |
 | `temperature_step` | number | `0.5`     | Degrees added or removed per `+` / `−` press.           |
